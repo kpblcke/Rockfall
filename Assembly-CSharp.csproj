@@ -59,9 +59,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ShipThrust.cs" />
-    <Compile Include="Assets\SmoothFollow.cs" />
-    <Compile Include="Assets\VirtualJoystick.cs" />
+    <Compile Include="Assets\Scripts\Indicator.cs" />
+    <Compile Include="Assets\Scripts\IndicatorManager.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\ShipSteering.cs" />
+    <Compile Include="Assets\Scripts\ShipThrust.cs" />
+    <Compile Include="Assets\Scripts\Singleton.cs" />
+    <Compile Include="Assets\Scripts\SmoothFollow.cs" />
+    <Compile Include="Assets\Scripts\SpaceStation.cs" />
+    <Compile Include="Assets\Scripts\VirtualJoystick.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Unity/Projects/Rockfall/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
