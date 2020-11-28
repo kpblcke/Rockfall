@@ -63,7 +63,10 @@
     <Compile Include="Assets\Scripts\IndicatorManager.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\ShipSteering.cs" />
+    <Compile Include="Assets\Scripts\ShipTarget.cs" />
     <Compile Include="Assets\Scripts\ShipThrust.cs" />
+    <Compile Include="Assets\Scripts\ShipWeapons.cs" />
+    <Compile Include="Assets\Scripts\Shot.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\SmoothFollow.cs" />
     <Compile Include="Assets\Scripts\SpaceStation.cs" />
