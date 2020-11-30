@@ -1157,6 +1157,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1806897679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806897681}
+  - component: {fileID: 1806897680}
+  m_Layer: 0
+  m_Name: Asteroid Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1806897680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806897679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ac2ebf255132044b5037d7ecf6fb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 250
+  asteroidPrefab: {fileID: 8730107132039147637, guid: 17ba61554059c2643afc30944b698a89,
+    type: 3}
+  spawnRate: 5
+  variance: 1
+  target: {fileID: 2097345303}
+  spawnAsteroids: 1
+--- !u!4 &1806897681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806897679}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.1254994, y: 0.0793519, z: 0.6954533}
+  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1861849262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,6 +1376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2097345303}
   - component: {fileID: 2097345304}
+  - component: {fileID: 2097345305}
   m_Layer: 0
   m_Name: Space Station
   m_TagString: Untagged
@@ -1360,6 +1411,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb4ca3e6f758c0498e3c2f36e1e9c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2097345305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097345302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0131edb3ffaae469eeeb5a8b3caf10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 10
+  destructionPrefab: {fileID: 0}
+  gameOverOnDestroyed: 1
 --- !u!1 &4872813719047117607
 GameObject:
   m_ObjectHideFlags: 0
