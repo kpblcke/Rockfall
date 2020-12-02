@@ -35,9 +35,14 @@ public class ShipWeapons : MonoBehaviour {
         var firePointToUse = firePoints[firePointIndex];
         // Создать новый снаряд с ориентацией,
         // соответствующей пушке
-        Instantiate(shotPrefab,
-            firePointToUse.position,
-            firePointToUse.rotation);
+        Instantiate(shotPrefab, firePointToUse.position, firePointToUse.rotation);
+        
+        // Если пушка имеет компонент источника звука,
+        // воспроизвести звуковой эффект
+        var audio = firePointToUse.GetComponent<AudioSource>();
+        if (audio) {
+            audio.Play();
+        }
         // Перейти к следующей пушке
         firePointIndex++;
         // Если произошел выход за границы массива,

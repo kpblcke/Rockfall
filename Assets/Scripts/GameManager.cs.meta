@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: b1e76d9bff42e094dba8d77a1591aa0f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - shipPrefab: {fileID: 3343494429388230905, guid: 978afe90efa7a4f41b10763264e0bdd2,
+      type: 3}
+  - shipStartPosition: {instanceID: 0}
+  - spaceStationPrefab: {fileID: 3384825808878490800, guid: 7e99c7b4231b19043aebb74669224a55,
+      type: 3}
+  - spaceStationStartPosition: {instanceID: 0}
+  - cameraFollow: {instanceID: 0}
+  - inGameUI: {instanceID: 0}
+  - pausedUI: {instanceID: 0}
+  - gameOverUI: {instanceID: 0}
+  - mainMenuUI: {instanceID: 0}
+  - asteroidSpawner: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,7 +10,7 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     // Местоположение пальца и джойстика, когда
     // происходит перемещение
     [SerializeField]
-    private Vector2 originalPosition;
+    private Vector3 originalPosition;
     [SerializeField]
     private Vector2 originalThumbPosition;
     // Расстояние, на которое сместился палец относительно
