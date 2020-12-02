@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipSteering : MonoBehaviour
 {
     // Скорость поворота корабля
-    public float turnRate = 6.0f;
+    public float turnRate = 0.5f;
 
     // Сила выравнивания корабля
     public float levelDamping = 1.0f;
@@ -19,14 +19,13 @@ public class ShipSteering : MonoBehaviour
             = InputManager.instance.steering.delta;
         // Теперь создать вектор для вычисления поворота.
         var rotation = new Vector2();
-        rotation.y = steeringInput.x;
-        rotation.x = steeringInput.y;
+        rotation.y =  (steeringInput.x > 0 ? 1 : -1) * steeringInput.x * steeringInput.x;
+        rotation.x = (steeringInput.y > 0 ? -1 : 1) * steeringInput.y * steeringInput.y;
         // Умножить на turnRate, чтобы получить величину поворота.
         rotation *= turnRate;
         // Преобразовать в радианы, умножив на 90 %
         // половины круга
-        rotation.x = Mathf.Clamp(
-            rotation.x, -Mathf.PI * 0.9f, Mathf.PI * 0.9f);
+        rotation.x = Mathf.Clamp(rotation.x, -Mathf.PI * 0.9f, Mathf.PI * 0.9f);
         // И преобразовать радианы в кватернион поворота!
         var newOrientation = Quaternion.Euler(rotation);
         // Объединить поворот с текущей ориентацией
@@ -41,8 +40,6 @@ public class ShipSteering : MonoBehaviour
         // этой ориентации "без вращения"; когда это происходит
         // на протяжении нескольких кадров, объект медленно
         // выравнивается над поверхностью
-        transform.rotation = Quaternion.Slerp(
-            transform.rotation, levelOrientation,
-            levelDamping * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, levelOrientation,levelDamping * Time.deltaTime);
     }
 }
