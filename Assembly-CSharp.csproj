@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\RemoveAfter.cs" />
     <Compile Include="Assets\Scripts\Asteroid.cs" />
     <Compile Include="Assets\Scripts\AsteroidSpawner.cs" />
     <Compile Include="Assets\Scripts\Boundary.cs" />
@@ -68,10 +69,16 @@
     <Compile Include="Assets\Scripts\Indicator.cs" />
     <Compile Include="Assets\Scripts\IndicatorManager.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\Rocket.cs" />
+    <Compile Include="Assets\Scripts\Scoreable.cs" />
+    <Compile Include="Assets\Scripts\ScoreSystem.cs" />
     <Compile Include="Assets\Scripts\ShipSteering.cs" />
     <Compile Include="Assets\Scripts\ShipTarget.cs" />
     <Compile Include="Assets\Scripts\ShipThrust.cs" />
-    <Compile Include="Assets\Scripts\ShipWeapons.cs" />
+    <Compile Include="Assets\Scripts\ShipWeapons\BulletWeapon.cs" />
+    <Compile Include="Assets\Scripts\ShipWeapons\RocketWeapon.cs" />
+    <Compile Include="Assets\Scripts\ShipWeapons\ShipArsenal.cs" />
+    <Compile Include="Assets\Scripts\ShipWeapons\ShipWeapons.cs" />
     <Compile Include="Assets\Scripts\Shot.cs" />
     <Compile Include="Assets\Scripts\Singleton.cs" />
     <Compile Include="Assets\Scripts\SmoothFollow.cs" />

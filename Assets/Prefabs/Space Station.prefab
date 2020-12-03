@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3384825808878490801}
   - component: {fileID: 3384825808878490814}
   - component: {fileID: 3384825808878490815}
-  - component: {fileID: 3657082743517202234}
   m_Layer: 0
   m_Name: Space Station
   m_TagString: Untagged
@@ -59,21 +58,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 10
-  destructionPrefab: {fileID: 0}
+  destructionPrefab: {fileID: 1225996839791170247, guid: 8e1b72264adce304e9ea84c15c57fb1f,
+    type: 3}
+  damagePrefab: {fileID: 1225996839791170247, guid: ef6c074ab98027e40a9540d80141f9cc,
+    type: 3}
   gameOverOnDestroyed: 1
---- !u!135 &3657082743517202234
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3384825808878490800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: -5, z: 0}
 --- !u!1001 &3384825809571427970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140,6 +129,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4795964219877449144, guid: 03841fc8794eb3342930113213e0dd40,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3792096293529408230, guid: 03841fc8794eb3342930113213e0dd40,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539584031905719605, guid: 03841fc8794eb3342930113213e0dd40,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03841fc8794eb3342930113213e0dd40, type: 3}

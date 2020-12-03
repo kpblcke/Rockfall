@@ -16,11 +16,14 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     // Расстояние, на которое сместился палец относительно
     // исходного местоположения
     public Vector2 delta;
+
+    private RectTransform _rectTransform; 
     
     void Start () {
+        _rectTransform = GetComponent<RectTransform>();
         // В момент запуска запомнить исходные
         // координаты
-        originalPosition = this.GetComponent<RectTransform>().localPosition;
+        originalPosition = _rectTransform.anchoredPosition;
         originalThumbPosition = thumb.localPosition;
         // Выключить площадку, сделав ее невидимой
         thumb.gameObject.SetActive(false);
@@ -36,7 +39,7 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         Vector3 worldPoint = new Vector3();
         RectTransformUtility.ScreenPointToWorldPointInRectangle(this.transform as RectTransform, eventData.position, eventData.enterEventCamera, out worldPoint);
         // Поместить джойстик в эту позицию
-        this.GetComponent<RectTransform>().position = worldPoint;
+        _rectTransform.position = worldPoint;
         // Поместить площадку в исходную позицию
         // относительно джойстика
         thumb.localPosition = originalThumbPosition;
@@ -50,7 +53,7 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         // Поместить площадку в эту точку
         thumb.position = worldPoint;
         // Вычислить смещение от исходной позиции
-        var size = GetComponent<RectTransform>().rect.size;
+        var size = _rectTransform.rect.size;
         delta = thumb.localPosition;
         delta.x /= size.x / 2.0f;
         delta.y /= size.y / 2.0f;
@@ -61,7 +64,7 @@ public class VirtualJoystick : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     // Вызывается по окончании перемещения
     public void OnEndDrag (PointerEventData eventData) {
         // Сбросить позицию джойстика
-        this.GetComponent<RectTransform>().localPosition = originalPosition;
+        _rectTransform.anchoredPosition = originalPosition;
         // Сбросить величину смещения в ноль
         delta = Vector2.zero;
         // Скрыть площадку

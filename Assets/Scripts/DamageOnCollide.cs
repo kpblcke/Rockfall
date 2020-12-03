@@ -11,16 +11,14 @@ public class DamageOnCollide : MonoBehaviour {
     void HitObject(GameObject theObject) {
         // Нанести повреждение объекту, в который попал данный объект,
         // если возможно.
-        var theirDamage =
-            theObject.GetComponentInParent<DamageTaking>();
+        var theirDamage = theObject.GetComponentInParent<DamageTaking>();
         if (theirDamage) {
-            theirDamage.TakeDamage(damage);
+            theirDamage.TakeDamage(damage, transform);
         }
         // Нанести повреждение себе, если возможно
-        var ourDamage =
-            this.GetComponentInParent<DamageTaking>();
+        var ourDamage = this.GetComponentInParent<DamageTaking>();
         if (ourDamage) {
-            ourDamage.TakeDamage(damageToSelf);
+            ourDamage.TakeDamage(damageToSelf, transform);
         }
     }
     // Объект вошел в область действия данного триггера?
