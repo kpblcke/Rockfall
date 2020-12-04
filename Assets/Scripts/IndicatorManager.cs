@@ -9,8 +9,7 @@ public class IndicatorManager : Singleton<IndicatorManager> {
     // Шаблон для создания индикаторов
     public Indicator indicatorPrefab;
     // Этот метод будет вызываться другими объектами
-    public Indicator AddIndicator(GameObject target,
-        Color color, Sprite sprite = null) {
+    public Indicator AddIndicator(GameObject target, Color color, Sprite sprite = null) {
         // Создать объект индикатора
         var newIndicator = Instantiate(indicatorPrefab);
         // Связать его с целевым объектом
@@ -20,11 +19,14 @@ public class IndicatorManager : Singleton<IndicatorManager> {
         // Если задан спрайт, установить его как изображение
         // для данного индикатора
         if (sprite != null) {
-            newIndicator
-                .GetComponent<Image>().sprite = sprite;
+            newIndicator.GetComponent<Image>().sprite = sprite;
         }
+
+        newIndicator.show = true;
         // Добавить индикатор в контейнер.
         newIndicator.transform.SetParent(labelContainer, false);
         return newIndicator;
     }
+    
+    
 }

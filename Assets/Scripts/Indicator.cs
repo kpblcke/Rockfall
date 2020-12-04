@@ -13,6 +13,8 @@ public class Indicator : MonoBehaviour {
     public Text distanceLabel;
     // Расстояние от края экрана.
     public int margin = 50;
+
+    public bool show = true;
     // Цвет оттенка изображения.
     public Color color {
         set {
@@ -29,7 +31,7 @@ public class Indicator : MonoBehaviour {
         distanceLabel.enabled = false;
         // На запуске дождаться ближайшего кадра перед отображением
         // для предотвращения визуальных артефактов
-        GetComponent<Image>().enabled = false;
+        GetComponent<Image>().enabled = show;
     }
     // Обновляет положение индикатора в каждом кадре
     void Update()
@@ -53,7 +55,7 @@ public class Indicator : MonoBehaviour {
             // Скрыть надпись
             distanceLabel.enabled = false;
         }
-        GetComponent<Image>().enabled = true;
+        GetComponent<Image>().enabled = show;
         //Определить экранные координаты объекта
         var viewportPoint =
             Camera.main.WorldToViewportPoint(target.position);
@@ -65,8 +67,7 @@ public class Indicator : MonoBehaviour {
             viewportPoint.x *= -Mathf.Infinity;
         }
         // Определить видимые координаты для индикатора
-        var screenPoint =
-            Camera.main.ViewportToScreenPoint(viewportPoint);
+        var screenPoint = Camera.main.ViewportToScreenPoint(viewportPoint);
         // Ограничить краями экрана
         screenPoint.x = Mathf.Clamp(screenPoint.x,margin,Screen.width - margin * 2);
         screenPoint.y = Mathf.Clamp(screenPoint.y,margin,Screen.height - margin * 2);

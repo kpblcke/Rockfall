@@ -8,19 +8,17 @@ public class DamageTaking : MonoBehaviour {
     // При разрушении создать этот объект
     // в текущей позиции
     public GameObject destructionPrefab;
+
+    public GameObject damagePrefab;
     // Завершить игру при разрушении данного объекта?
     public bool gameOverOnDestroyed = false;
     // Вызывается другими объектами (например, астероидами и шарами плазмы)
     // для нанесения повреждений
-    public void TakeDamage(int amount) {
-        // Сообщить о попадании в текущий объект
-        Debug.Log(gameObject.name + " damaged!");
+    public void TakeDamage(int amount, Transform atTransform) {
         // Вычесть amount из числа очков прочности
         hitPoints -= amount;
         // Очки исчерпаны?
         if (hitPoints <= 0) {
-            // Зафиксировать этот факт
-            Debug.Log(gameObject.name + " destroyed!");
             // Удалить себя из игры
             Destroy(gameObject);
             // Задан шаблон для создания объекта в точке разрушения?
@@ -33,6 +31,13 @@ public class DamageTaking : MonoBehaviour {
             // метод GameOver класса GameManager.
             if (gameOverOnDestroyed == true) {
                 GameManager.instance.GameOver();
+            }
+        }
+        else
+        {
+            if (damagePrefab != null)
+            {
+                Instantiate(damagePrefab, atTransform.position, atTransform.rotation, transform);
             }
         }
     }

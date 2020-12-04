@@ -31,6 +31,8 @@ public class GameManager : Singleton<GameManager> {
     public AsteroidSpawner asteroidSpawner;
     // Признак приостановки игры.
     public bool paused;
+
+    public ScoreSystem scoreSystem;
     // Отображает главное меню в момент запуска игры
     void Start() {
         ShowMainMenu();
@@ -85,6 +87,7 @@ public class GameManager : Singleton<GameManager> {
         // Сообщить системе создания астероидов
         // позицию новой станции
         asteroidSpawner.target = currentSpaceStation.transform;
+        scoreSystem.Reset();
     }
     // Вызывается объектами, завершающими игру при разрушении
     public void GameOver() {
@@ -117,6 +120,11 @@ public class GameManager : Singleton<GameManager> {
             // Возобновить ход времени
             Time.timeScale = 1.0f;
         }
+    }
+
+    public void Quit()
+    {
+        Application.Quit(); 
     }
     
     public void Update() {
